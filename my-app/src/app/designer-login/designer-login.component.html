@@ -1,0 +1,39 @@
+<div class="main">
+    <div class="loginPage">
+        <div *ngIf="errorMessage" class="error-message">
+            {{ errorMessage }}
+        </div>
+        <h2>Login</h2>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="input-login">
+                <input type="text" formControlName="email">
+                <label>Email<span class="required-asterisk text-danger">*</span></label>
+                <div class="message">
+                    <div *ngIf="loginForm.get('email').invalid && loginForm.get('email').touched" class="error-message">
+                        <div *ngIf="loginForm.get('email').hasError('required')">Email is required.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="input-login">
+                <input [type]="showPassword ? 'text' : 'password'" formControlName="password">
+                <div class="visibility">
+                    <input type="checkbox" (change)="passwordVisibility()">  show password
+                </div>
+                <label>Password<span class="required-asterisk text-danger">*</span></label>
+                <div *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched"
+                    class="error-message">
+                    <div *ngIf="loginForm.get('password').hasError('required')">Password is required.</div>
+                </div>
+            </div>
+            <div class="remember">
+                <!-- <label><input type="checkbox">Remember me</label> &nbsp; -->
+                <a href="forgot.html">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn">Login</button>
+
+            <div class="login-signup">
+                <p>Don't have an account?<a routerLink="/signup">SignUp</a></p>
+            </div>
+        </form>
+    </div>
+</div>

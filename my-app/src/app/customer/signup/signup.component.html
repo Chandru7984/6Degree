@@ -1,0 +1,130 @@
+<div class="main">
+    <form [formGroup]="signupForm" (ngSubmit)="signup()">
+        <h2>Customer Details:</h2>
+        <div class="input1">
+            <div class="input-signup">
+                <input type="text" formControlName="fullname">
+                <label>Name<span class="required-asterisk text-danger">*</span></label>
+                <div *ngIf="signupForm.get('fullname').invalid && signupForm.get('fullname').touched"
+                    class="error-message">
+                    <div *ngIf="signupForm.get('fullname').hasError('required')">Fullname is required.</div>
+                    <div *ngIf="signupForm.get('fullname').hasError('minlength')">Invalid Name format.</div>
+                </div>
+            </div>
+            &nbsp; &nbsp;
+            <div class="input-signup">
+                <input type="text" formControlName="email">
+                <label>Email<span class="required-asterisk text-danger">*</span></label>
+                <div *ngIf="signupForm.get('email').invalid && signupForm.get('email').touched" class="error-message">
+                    <div *ngIf="signupForm.get('email').hasError('required')">Email is required.</div>
+                    <div *ngIf="signupForm.get('email').hasError('pattern')">Invalid email format.</div>
+                </div>
+            </div>
+            &nbsp; &nbsp;
+            <div class="input-signup">
+                <input type="text" formControlName="mobile">
+                <label>Mobile<span class="required-asterisk text-danger">*</span></label>
+                <div *ngIf="signupForm.get('mobile').invalid && signupForm.get('email').touched" class="error-message">
+                    <div *ngIf="signupForm.get('mobile').hasError('required')">Mobile number is required.</div>
+                    <div *ngIf="signupForm.get('mobile').hasError('pattern')">Invalid Mobile number format.</div>
+                </div>
+            </div>
+        </div>
+        <div class="input1">
+            <div class="input-signup">
+                <input type="password" formControlName="password">
+                <label>Password<span class="required-asterisk text-danger">*</span></label>
+                <div *ngIf="signupForm.get('password').invalid && signupForm.get('password').touched"
+                    class="error-message">
+                    <div *ngIf="signupForm.get('password').hasError('required')">Password is required.</div>
+                    <div *ngIf="signupForm.get('password').hasError('pattern')">Invalid password</div>
+                </div>
+            </div>
+            &nbsp; &nbsp;
+            <div class="input-signup">
+                <input type="confirmPassword" formControlName="confirmpassword">
+                <label>Confirm Password<span class="required-asterisk text-danger">*</span></label>
+                <div *ngIf="signupForm.get('confirmpassword').invalid && signupForm.get('confirmpassword').touched"
+                    class="error-message">
+                    <div *ngIf="signupForm.get('confirmpassword').hasError('required')">Confirm Password is required.
+                    </div>
+                    <div *ngIf="signupForm.get('confirmpassword').getError('Mismatch')">Password Mismatch</div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!-- Address -->
+
+        <h2>Address Details:</h2>
+        <div class="input1">
+            <div class="input-signup">
+                <input type="text" formControlName="name">
+                <label>Name<span class="required-asterisk text-danger">*</span></label>
+                <div *ngIf="signupForm.get('name').invalid && signupForm.get('password').touched" class="error-message">
+                    <div *ngIf="signupForm.get('name').hasError('required')">Name is required.</div>
+                    <div *ngIf="signupForm.get('name').hasError('minlength')">Invalid Name format</div>
+                </div>
+            </div>
+            &nbsp; &nbsp;
+            <div class="input-signup">
+                <input type="text" formControlName="addressline1">
+                <label>Addressline1<span class="required-asterisk text-danger">*</span></label>
+                <div *ngIf="signupForm.get('addressline1').invalid && signupForm.get('addressline1').touched"
+                    class="error-message">
+                    <div *ngIf="signupForm.get('addressline1').hasError('required')">Addressline1 is required.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="input1">
+            <div class="input-signup">
+                <input type="text" formControlName="addressline2">
+                <label>Addressline2</label>
+            </div>
+            &nbsp; &nbsp;
+            <div class="input-signup">
+                <input type="text" formControlName="city">
+                <label>City<span class="required-asterisk text-danger">*</span></label>
+                <div *ngIf="signupForm.get('city').invalid && signupForm.get('city').touched"
+                    class="error-message">
+                    <div *ngIf="signupForm.get('city').hasError('required')">City is required.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="input1">
+            <div class="input-signup">
+                <input type="text" formControlName="landmark">
+                <label>Landmark<span class="required-asterisk text-danger">*</span></label>
+                <div *ngIf="signupForm.get('landmark').invalid && signupForm.get('landmark').touched"
+                    class="error-message">
+                    <div *ngIf="signupForm.get('landmark').hasError('required')">Landmark is required.</div>
+                </div>
+            </div>
+            &nbsp; &nbsp;
+            <div class="input-signup">
+                <input type="text" formControlName="state">
+                <label>State</label>
+            </div>
+        </div>
+        <div class="input1">
+            <div class="input-signup">
+                <input type="text" formControlName="country">
+                <label>Country</label>
+            </div>
+            &nbsp; &nbsp;
+            <div class="input-signup">
+                <input type="pincode" formControlName="pincode">
+                <label>Pincode<span class="required-asterisk text-danger">*</span></label>
+                <div *ngIf="signupForm.get('pincode').invalid && signupForm.get('pincode').touched"
+                    class="error-message">
+                    <div *ngIf="signupForm.get('pincode').hasError('required')">Pincode is required.
+                    </div>
+                    <div *ngIf="signupForm.get('pincode').getError('pattern')">Invalid format</div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <button type="submit" class="btn">Submit</button>
+    </form>
+</div>

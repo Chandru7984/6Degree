@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 15%;
+        } */
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh;
+            background: url('body_img.jpg') no-repeat;
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 8vh;
+            width: 90%;
+            padding: 20px 100px;
+            /* background: transparent; */
+            background: rgba(10, 109, 166, 0.916);
+            border: 1px solid rgba(69, 159, 211, 0.845);
+            box-shadow: 0 0 50px black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 99;
+        }
+
+        .logo {
+            font-size: 2em;
+            color: white;
+            user-select: none;
+        }
+
+        /* .navbar a {
+            position: relative;
+            font-size: 1.1em;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 40px;
+        } */
+
+        .navbar>.btnlogin {
+            width: 125px;
+            height: 45px;
+            border: 1px solid black;
+            background: transparent;
+            outline: none;
+            border-radius: 7px;
+            cursor: pointer;
+            font-size: 1.1em;
+            color: white;
+            font-weight: 500;
+            margin-left: 40px;
+            transition: 0.5s;
+        }
+
+        .navbar .btnlogin:hover {
+            background: black;
+            color: white;
+        }
+
+        /* .navbar a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 100%;
+            height: 3px;
+            background: white;
+            border-radius: 5px;
+            transform-origin: left;
+            transform: scaleX(0);
+            transition: transform .5s;
+        }
+
+        .navbar a:hover::after {
+            transform-origin: right;
+            transform: scaleX(1);
+        } */
+
+        .forgot-pwd {
+            /* display: flex; */
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 150px;
+            width: 350px;
+            background: darkgrey;
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: 0 0 40px black;
+        }
+
+        input {
+            width: 200px;
+            border: 2px solid green;
+            border-radius: 5px;
+            padding: 5px 10px;
+        }
+
+        .btn {
+            width: 80px;
+            border: 1px solid black;
+            border-radius: 5px;
+            background: white;
+            color: black;
+            padding: 5px;
+        }
+
+        .btn:hover {
+            background: green;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <h2 class="logo">Store</h2>
+        <nav class="navbar">
+            <button class="btnlogin" onclick="window.location.href = 'http://127.0.0.1:5500/index.html';">Home</button>
+        </nav>
+    </header>
+
+    <div class="forgot-pwd">
+        <div class="heading">
+            <h3>Enter your Registered Email</h3>
+        </div>
+        <div class="input">
+            <input type="email" name="email" placeholder="enter your email">
+        </div>
+        <br>
+        <button class="btn" type="submit">Send</button>
+
+    </div>
+
+</body>
+
+</html>

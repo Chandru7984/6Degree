@@ -1,0 +1,44 @@
+<div class="loginPage">
+    <span class="close" (click)="closeDialog()">&times;</span>
+    <h2><strong>Subscribe</strong> here.</h2>
+    <form [formGroup]="subscribeForm" (ngSubmit)="submitForm()">
+
+        <div class="input-login">
+            <input type="text" formControlName="fullname">
+            <label>Fullname<span class="required-asterisk text-danger">*</span></label>
+            <div *ngIf="subscribeForm.get('fullname').invalid && subscribeForm.get('fullname').touched"
+                class="error-message">
+                <div *ngIf="subscribeForm.get('fullname').hasError('required')">Fullname is required.</div>
+                <div *ngIf="subscribeForm.get('fullname').hasError('minlength')">Invalid Name format.</div>
+            </div>
+        </div>
+        <div class="input-login">
+            <input type="email" formControlName="email">
+            <label>Email<span class="required-asterisk text-danger">*</span></label>
+            <div *ngIf="subscribeForm.get('email').invalid && subscribeForm.get('email').touched" class="error-message">
+                <div *ngIf="subscribeForm.get('email').hasError('required')">Please enter valid email address.</div>
+                <div *ngIf="subscribeForm.get('email').hasError('pattern')">Invalid Email format (eg.,abcd@123).</div>
+            </div>
+
+        </div>
+        <div class="input-login">
+            <select id="brand" formControlName="department"
+                style="width: 92%;height: 25px; border: 1px solid black;border-radius: 5px;">
+                <option value="Rolex">Rolex</option>
+                <option value="Omega">Omega</option>
+            </select>
+            <label>Brand<span class="required-asterisk text-danger">*</span></label>
+            <div *ngIf="subscribeForm.get('department').invalid && subscribeForm.get('department').touched"
+                class="error-message">
+                <div *ngIf="subscribeForm.get('department').hasError('required')">Brand is required.</div>
+            </div>
+        </div>
+        <button type="submit" class="btn">Subscribe</button>
+    </form>
+    <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+    </div>
+    <div *ngIf="mailError" class="error-message">
+        {{ mailError }}
+    </div>
+</div>

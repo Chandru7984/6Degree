@@ -1,0 +1,475 @@
+<div class="index">
+    <div class="main-page">
+        <!-- <app-popup-form></app-popup-form> -->
+        <!-- <button (click)="openPopupFormPopup()">Open Subscription Form</button> -->
+        <div class="builder-block">
+            <span class="builder-text">
+                <h1>10 Year</h1>
+                <h1>Annivarsary</h1>
+                <h1>Watch</h1>
+                <button>Shop Now</button>
+            </span>
+        </div>
+        <div class="header">
+            <header>
+                <nav class="navbar">
+                    <div class="category">
+                        <a href="">MENS</a>
+                        <a href="">WOMENS</a>
+                        <a href="">BRAND</a>
+                    </div>
+                    <div class="btn">
+                        <a class="btnlogin">Style</a>
+                    </div>
+                    <div class="icon">
+                        <input type="search" placeholder="search"> &nbsp; &nbsp;
+                        <!-- <select name="" id=""><span class="material-symbols-outlined">
+                                account_circle
+                            </span></select> -->
+                        </div>
+                        <button mat-icon-button [matMenuTriggerFor]="accountMenu" class="account-button">
+                            <mat-icon class="account-icon">account_circle</mat-icon>
+                        </button>
+                        <div class="menu-item">
+                    <mat-menu #accountMenu="matMenu">
+                        <!-- <button mat-menu-item><a [routerLink]="'/login'">Logout</a></button> -->
+                        <button mat-menu-item (click)="openLogin()" >Login</button>
+                        <button mat-menu-item>My Account</button>
+                    </mat-menu>
+                    </div>
+                </nav>
+            </header>
+        </div>
+        <div *ngIf="successMess" class="success-message">
+            <p>{{ successMessage }}</p>
+          </div>
+    </div>
+</div>
+  
+
+<!--  -->
+
+<section>
+    <div class="categories">
+        <div class="heading">
+            <p>Shop By Categories</p>
+        </div>
+    </div>
+</section>
+
+
+
+<!--  -->
+
+<section>
+    <div class="contain" id="images" style="height: 800px; width: 100%; overflow-x: hidden;">
+        <div class="row" id="images1" style="display: grid; grid-template-columns: 2fr 1fr; column-gap: 10px;">
+            <div class="col" id="image1" style="height: 350px;">
+                <div class="image-text">
+                    <a href="">Watches</a>
+                </div>
+            </div>
+            <div class="col" id="image2" style="height: 350px;">
+                <div class="image-text">
+                    <a href="">Sunglasses</a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row" id="images2" style="display: grid; grid-template-columns: 5fr 5fr; column-gap: 10px;">
+            <div class="col" id="image3" style="height: 350px;">
+                <div class="image-text">
+                    <a href="">Bracelets</a>
+                </div>
+            </div>
+            <div class="col" id="image4" style="height: 350px;">
+                <div class="image-text">
+                    <a href="">Necklaces</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--  -->
+
+<section>
+    <div class="promise" id="promise">
+        <div class="row" id="row1">
+            <div class="promise-text">
+                <p>Our Promises</p>
+            </div>
+        </div>
+        <div class="row" id="row2">
+            <div class="col">
+                <img src="\assets\picture1.webp" alt="">
+            </div>
+            <div class="col">
+                <img src="\assets\picture2.webp" alt="">
+            </div>
+            <div class="col">
+                <img src="\assets\picture3.webp" alt="">
+            </div>
+            <div class="col">
+                <img src="\assets\picture4.webp" alt="">
+            </div>
+        </div>
+        <div class="row" id="row3">
+            <div class="col">
+                <div class="pro-text">
+                    <p>Free Shipping over $75</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="pro-text">
+                    <p>Two Year Warranty</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="pro-text">
+                    <p>Easy Returns</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="pro-text">
+                    <p>1% Revenue to
+                        Charitable Initiatives</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--  -->
+
+<section>
+    <div class="banner-image">
+        <div class="banner-text">
+            <p>Petal Blush Ceramic</p>
+        </div>
+        <br>
+        <div class="banner-text1">
+            <p>High-tech. High-resistance. High-gloss.</p>
+        </div>
+        <button><a href="">SHOP NOW</a></button>
+    </div>
+</section>
+
+<!--  -->
+
+<div class="products">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Trending <b>Products</b></h2>
+            <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+                <!-- Carousel indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+                <!-- Wrapper for carousel items -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="thumb-wrapper">
+                                    <div class="img-box">
+                                        <img src="\assets\omega3.webp" class="img-fluid" alt="">
+                                    </div>
+                                    <div class="thumb-content">
+                                        <h4>Omega</h4>
+                                        <p class="item-price"><span>$369.00</span></p>
+                                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="thumb-wrapper">
+                                    <div class="img-box">
+                                        <img src="\assets\omega2.webp" class="img-fluid" alt="">
+                                    </div>
+                                    <div class="thumb-content">
+                                        <h4>Omega watch for Men</h4>
+                                        <p class="item-price"><span>$23.99</span></p>
+                                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="thumb-wrapper">
+                                    <div class="img-box">
+                                        <img src="\assets\omega1.webp" class="img-fluid" alt="">
+                                    </div>
+                                    <div class="thumb-content">
+                                        <h4>Omega style</h4>
+                                        <p class="item-price"><span>$649.00</span></p>
+                                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="thumb-wrapper">
+                                    <div class="img-box">
+                                        <img src="\assets\product1.jpg" class="img-fluid" alt="">
+                                    </div>
+                                    <div class="thumb-content">
+                                        <h4>Michael Kors</h4>
+                                        <p class="item-price"><span>$250.00</span></p>
+                                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="thumb-wrapper">
+                                    <div class="img-box">
+                                        <img src="\assets\product2.jpg" class="img-fluid" alt="">
+                                    </div>
+                                    <div class="thumb-content">
+                                        <h4>Michael Kors</h4>
+                                        <p class="item-price"><span>$269.00</span></p>
+                                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="thumb-wrapper">
+                                    <div class="img-box">
+                                        <img src="\assets\product3.jpg" class="img-fluid" alt="">
+                                    </div>
+                                    <div class="thumb-content">
+                                        <h4>Michael Kors</h4>
+                                        <p class="item-price"><span>$869.00</span></p>
+                                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="thumb-wrapper">
+                                    <div class="img-box">
+                                        <img src="\assets\product4.jpg" class="img-fluid" alt="">
+                                    </div>
+                                    <div class="thumb-content">
+                                        <h4>Michael Kors</h4>
+                                        <p class="item-price"><span>$99.00</span></p>
+                                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="thumb-wrapper">
+                                    <div class="img-box">
+                                        <img src="\assets\fossil1.jpg" class="img-fluid" alt="">
+                                    </div>
+                                    <div class="thumb-content">
+                                        <h4>Fossil Style for Men</h4>
+                                        <p class="item-price"><span>$569.00</span></p>
+                                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="thumb-wrapper">
+                                    <div class="img-box">
+                                        <img src="\assets\product5.webp" class="img-fluid" alt="">
+                                    </div>
+                                    <div class="thumb-content">
+                                        <h4>Omega</h4>
+                                        <p class="item-price"><span>$349.00</span></p>
+                                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="thumb-wrapper">
+                                    <div class="img-box">
+                                        <img src="\assets\product6.webp" class="img-fluid" alt="">
+                                    </div>
+                                    <div class="thumb-content">
+                                        <h4>Omega Men Watch</h4>
+                                        <p class="item-price"><span>$250.00</span></p>
+                                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="thumb-wrapper">
+                                    <div class="img-box">
+                                        <img src="\assets\product10.jpg" class="img-fluid" alt="">
+                                    </div>
+                                    <div class="thumb-content">
+                                        <h4>Michael Kors</h4>
+                                        <p class="item-price"><span>$418.00</span></p>
+                                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="thumb-wrapper">
+                                    <div class="img-box">
+                                        <img src="\assets\product9.jpg" class="img-fluid" alt="">
+                                    </div>
+                                    <div class="thumb-content">
+                                        <h4>Michael Kors</h4>
+                                        <p class="item-price"><span>$330.00</span></p>
+                                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Carousel controls -->
+                <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--  -->
+
+<section>
+    <div class="rolex-banner">
+    </div>
+</section>
+
+<!--  -->
+
+<section>
+    <div class="present">
+        <img src="\assets\cali.gif" alt="">
+    </div>
+    <div class="california">
+        <div class="california-text">
+            <h1>Dreamed in California.</h1>
+        </div>
+        <div class="california-text1">
+            <p>Bringing the unexpected to classic timekeeping since 2013.</p>
+        </div>
+    </div>
+</section>
+
+<!--  -->
+<div class="styling">
+    <h3>Shop the Looks</h3>
+    <div class="row" style="column-gap: 30px;">
+        <img src="\assets\style1.jpg" alt="" width="550" height="505">
+        <div class="col">
+            <div class="row" style="column-gap: 50px;">
+                <div class="row" id="style">
+                    <img src="\assets\style2.jpg" alt="" width="240" height="240">
+                </div>
+                <div class="row" id="style">
+                    <img src="\assets\style3.jpg" alt="" width="240" height="240">
+                </div>
+                <div class="row" id="style">
+                    <img src="\assets\style4.jpg" alt="" width="240" height="240">
+                </div>
+            </div>
+            <br>
+            <div class="row" style="column-gap: 50px;">
+                <div class="row" id="style">
+                    <img src="\assets\style5.jpg" alt="" width="240" height="240">
+                </div>
+                <div class="row" id="style">
+                    <img src="\assets\style6.jpg" alt="" width="240" height="240">
+                </div>
+                <div class="row" id="style">
+                    <img src="\assets\style7.jpg" alt="" width="240" height="240">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--  -->
+
+<!-- <section>
+    <div class="flip">
+        <div class="flip-card">
+
+            <div class="flip-card-inner">
+
+                <div class="flip-card-front">
+                    <img src="\assets\banner3.png" alt="">
+                    <p>Cosmograph Daytona</p>
+                </div>
+                <div class="flip-card-back">
+                    <img src="\assets\rolex_crazy.png" alt="">
+                    <p>Lady-Datejust</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<footer>
+    <div class="container">
+        <img src="\assets\Rolex_Crown_Logo.jpg" alt="">
+        <div class="sec quicklinks">
+            <ul>
+                <h5>Shop ROLEX</h5>
+                <li><a href="">Knowledge base</a></li>
+                <li><a href="">Project documentation</a></li>
+                <li><a href="">Employee Onboarding</a></li>
+                <li><a href="">Meeting notes</a></li>
+            </ul>
+        </div>
+        <div class="sec quicklinks">
+            <ul>
+                <h5>Customer Service</h5>
+                <li><a href="">Features</a></li>
+                <li><a href="">Integrations</a></li>
+                <li><a href="">Pricing</a></li>
+                <li><a href="">What's new</a></li>
+                <li><a href="">Help center</a></li>
+                <li><a href="">Contact support</a></li>
+            </ul>
+        </div>
+        <div class="sec quicklinks">
+            <ul>
+                <h5>The Collections</h5>
+                <li><a href="https://www.rolex.com/watches/air-king">Air King</a></li>
+                <li><a href="https://www.rolex.com/watches/cosmograph-daytona">Cosmograph Daytona</a></li>
+                <li><a href="https://www.rolex.com/watches/datejust">Datejust</a></li>
+                <li><a href="https://www.rolex.com/watches/lady-datejust">Lady-Datejust</a></li>
+                <li><a href="https://www.rolex.com/watches/day-date">Day-Date</a></li>
+                <li><a href="https://www.rolex.com/watches/explorer">Explorer</a></li>
+                <li><a href="https://www.rolex.com/watches/gmt-master-ii">GMT-Master II</a></li>
+                <li><a href="https://www.rolex.com/watches/oyster-perpetual">Oyster Perpetual</a></li>
+                <li><a href="https://www.rolex.com/watches/sea-dweller">Sea-Dweller</a></li>
+                <li><a href="https://www.rolex.com/watches/sky-dweller">Sky-Dweller</a></li>
+                <li><a href="https://www.rolex.com/watches/submariner">Submariner</a></li>
+                <li><a href="https://www.rolex.com/watches/yacht-master">Yetch-Master</a></li>
+                <li><a href="https://www.rolex.com/watches/1908">1908</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="final" style="position: relative;left: -2rem;">
+        <ul>
+            <li><a href="">Privacy</a></li>
+            <li><a href="">Security</a></li>
+            <li><a href="">Terms & Conditions</a></li>
+        </ul>
+    </div>
+
+    <div class="final2">
+        <p>©2023 Rolex. All rights reserved.</p>
+    </div>
+</footer>
+<!-- <lib-ng-toast></lib-ng-toast> -->
+
+<!-- <router-outlet></router-outlet> -->

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script async src="signin.js"></script>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh;
+            background: url('body_img.jpg') no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 8vh;
+            width: 90%;
+            padding: 20px 100px;
+            /* background: transparent; */
+            background: rgba(1, 17, 26, 0.808);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 99;
+        }
+
+        .logo {
+            font-size: 2em;
+            color: white;
+            user-select: none;
+        }
+
+        .navbar a {
+            position: relative;
+            font-size: 1.1em;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 40px;
+        }
+
+        .navbar>.btnlogin {
+            width: 125px;
+            height: 45px;
+            border: 1px solid black;
+            background: transparent;
+            outline: none;
+            border-radius: 7px;
+            cursor: pointer;
+            font-size: 1.1em;
+            color: white;
+            font-weight: 500;
+            margin-left: 40px;
+            transition: 0.5s;
+        }
+
+        .navbar .btnlogin:hover {
+            background: rgba(52, 137, 206, 0.918);
+            color: white;
+        }
+
+        .navbar a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 100%;
+            height: 3px;
+            background: white;
+            border-radius: 5px;
+            transform-origin: left;
+            transform: scaleX(0);
+            transition: transform .5s;
+        }
+
+        .navbar a:hover::after {
+            transform-origin: right;
+            transform: scaleX(1);
+        }
+
+        .loginPage {
+            position: relative;
+            width: 400px;
+            height: 450px;
+            background: rgba(79, 169, 196, 0.808);
+            /* border: 2px solid black; */
+            border-radius: 20px;
+            backdrop-filter: blur(100px);
+            box-shadow: 0 0 30px black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 100px;
+            /* overflow: hidden; */
+            transition: height .5s;
+            transition: 0.5s;
+            padding: 0 0px;
+        }
+
+        .loginPage:hover {
+            border: 1px solid black;
+            transform: scale(-1.1s);
+        }
+
+        .loginPage:active {
+            transform: scale(0.95) rotateY('1.7deg');
+        }
+
+        /* .loginPage.active {
+    height: 1000px;
+} */
+
+        .loginPage.form-login {
+            width: 100%;
+            padding: 40px;
+        }
+
+        .loginPage.form-login.login {
+            display: none;
+        }
+
+        .loginPage.form-signup.signup {
+            position: absolute;
+            transform: translateX(400px);
+        }
+
+        .form-login h2 {
+            font-size: 2em;
+            color: black;
+            text-align: center;
+        }
+
+        .input-box {
+            position: relative;
+            width: 100%;
+            height: 50px;
+            border-bottom: 2px solid black;
+            margin: 30px 0;
+        }
+
+        .input-box label {
+            position: absolute;
+            top: 50%;
+            left: 5px;
+            transform: translateY(-50%);
+            font-size: 1em;
+            color: black;
+            font-weight: 500;
+            pointer-events: none;
+            transition: .5s;
+        }
+
+        .input-box input:valid~label,
+        .input-box input:focus~label {
+            top: -5px;
+        }
+
+        .input-box input {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            font-size: 1em;
+            color: black;
+            font-weight: 600;
+        }
+
+        .form-login.remember {
+            font-size: .9em;
+            color: black;
+            font-weight: 500;
+            margin: -15px 0 15px;
+            /* display: flex; */
+            padding-bottom: 20px;
+            justify-content: space-between;
+        }
+
+        .remember label input {
+            accent-color: #162938;
+            margin-right: 5px;
+        }
+
+        .remember a {
+            color: #162938;
+            text-decoration: none;
+            margin-left: 30px;
+        }
+
+        .remember a:hover {
+            text-decoration: underline;
+        }
+
+        .btn {
+            width: 100%;
+            height: 45px;
+            background: black;
+            border: none;
+            outline: none;
+            border-radius: 7px;
+            cursor: pointer;
+            font-size: 1em;
+            color: white;
+            font-weight: 500;
+            padding: 0 120px;
+        }
+
+        .login-signup {
+            font-size: .9em;
+            color: black;
+            text-align: center;
+            font-weight: 500;
+            margin: 25px 0 10px;
+        }
+
+        .login-signup p a {
+            color: black;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .login-signup p a:hover {
+            text-decoration: underline;
+        }
+
+        .input1 {
+            display: flex;
+            justify-content: center;
+            margin-bottom: -30px;
+        }
+
+        .input-signup {
+            position: relative;
+            width: 100%;
+            height: 50px;
+            border-bottom: 2px solid black;
+            border-collapse: separate;
+            margin: 30px 0;
+            justify-content: space-between;
+        }
+
+        .signupPage {
+            position: relative;
+            width: 600px;
+            height: 750px;
+            background: transparent;
+            /* border: 2px solid black; */
+            border-radius: 20px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 30px black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* overflow: hidden; */
+            transition: height .5s;
+        }
+
+        .input-signup label {
+            position: absolute;
+            top: 50%;
+            left: 5px;
+            transform: translateY(-50%);
+            font-size: 1em;
+            color: black;
+            font-weight: 500;
+            pointer-events: none;
+            transition: .5s;
+        }
+
+        .input-signup {
+            position: relative;
+            width: 100%;
+            height: 50px;
+            border-bottom: 2px solid black;
+            margin: 30px 0;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .input-signup input {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            font-size: 1em;
+            color: black;
+            font-weight: 600;
+            justify-content: space-between;
+        }
+
+        .input-signup input:valid~label,
+        .input-signup input:focus~label {
+            top: -5px;
+        }
+
+        .remember1 {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .form-signup h2 {
+            font-size: 2em;
+            color: black;
+            text-align: center;
+        }
+
+        .alert {
+            padding: 20px;
+            background-color: #f44336;
+            /* Red */
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        /* The close button */
+        .closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        /* When moving the mouse over the close button */
+        .closebtn:hover {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <header>
+        <h2 class="logo">Store</h2>
+        <nav class="navbar">
+            <button class="btnlogin" onclick="window.location.href = 'http://127.0.0.1:5500/index.html';">Home</button>
+        </nav>
+    </header>
+
+
+    <div class="loginPage">
+        <div class="form-login" id="signinForm">
+                <p id="message" style="color: red; font-size: 20px;"></p>
+                <h2>Login</h2>
+                <form action="#" method="post">
+                    <div class="input-box">
+                        <span class="icon"></span>
+                        <input type="email" id="email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"></span>
+                        <input type="password" id="password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="remember">
+                        <label><input type="checkbox">Remember me</label>
+                        <a href="forgot.html">Forgot Password?</a>
+                    </div>
+                    <br>
+                    <button type="submit" class="btn">Login</button>
+                    <!-- <p id="message"></p> -->
+                    <div class="login-signup">
+                        <p>Don't have an account?<a href="signup.html" class="signup-link">SignUp</a></p>
+                    </div>
+                </form>
+            </div>
+            </form>
+        </div>
+
+</body>
+
+</html>

@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('body_img.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    /* background: transparent; */
+    background: rgba(1, 17, 26, 0.808);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.logo {
+    font-size: 2em;
+    color: white;
+    user-select: none;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 1.1em;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navbar>.btnlogin {
+    width: 125px;
+    height: 45px;
+    border: 1px solid black;
+    background: transparent;
+    outline: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: 0.5s;
+}
+
+.navbar .btnlogin:hover {
+    background: rgba(52, 137, 206, 0.918);
+    color: white;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navbar a:hover::after {
+    transform-origin: right;
+    transform: scaleX(1);
+}
+
+.loginPage {
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background: rgba(79, 169, 196, 0.808);
+    /* border: 2px solid black; */
+    border-radius: 20px;
+    backdrop-filter: blur(100px);
+    box-shadow: 0 0 30px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* overflow: hidden; */
+    /* transition: height .5s; */
+    transition: 0.5s;
+}
+
+.loginPage:hover{
+    border: 1px solid black;
+    transform: scale(-1.1s);
+}
+
+.loginPage:active{
+    transform: scale(0.95) rotateY('1.7deg');
+}
+
+/* .loginPage.active {
+    height: 1000px;
+} */
+
+.loginPage.form-login {
+    width: 100%;
+    padding: 40px;
+}
+
+.loginPage.form-login.login {
+    display: none;
+}
+
+.loginPage.form-signup.signup {
+    position: absolute;
+    transform: translateX(400px);
+}
+
+.form-login h2 {
+    font-size: 2em;
+    color: black;
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid black;
+    margin: 30px 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: black;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:valid~label,
+.input-box input:focus~label {
+    top: -5px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: black;
+    font-weight: 600;
+}
+
+.form-login.remember {
+    font-size: .9em;
+    color: black;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    margin-bottom: -15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember label input {
+    accent-color: #162938;
+    margin-right: 5px;
+}
+
+.remember a {
+    color: #162938;
+    text-decoration: none;
+}
+
+.remember a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    height: 45px;
+    background: black;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 1em;
+    color: white;
+    font-weight: 500;
+}
+
+.login-signup {
+    font-size: .9em;
+    color: black;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.login-signup p a {
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-signup p a:hover {
+    text-decoration: underline;
+}
+
+.input1 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: -30px;
+}
+
+.input-signup {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid black;
+    border-collapse: separate;
+    margin: 30px 0;
+    justify-content: space-between;
+}
+
+.signupPage {
+    position: relative;
+    width: 600px;
+    height: 750px;
+    background: transparent;
+    /* border: 2px solid black; */
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* overflow: hidden; */
+    transition: height .5s;
+}
+
+.input-signup label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: black;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-signup {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid black;
+    margin: 30px 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-signup input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: black;
+    font-weight: 600;
+    justify-content: space-between;
+}
+
+.input-signup input:valid~label,
+.input-signup input:focus~label {
+    top: -5px;
+}
+
+.remember1{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.form-signup h2 {
+    font-size: 2em;
+    color: black;
+    text-align: center;
+}
+
+.form-signup>p{
+    justify-content: center;
+    display: flex;
+    text-align: center;
+}
+
+
+/* Get user */
+
